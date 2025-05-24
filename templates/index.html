@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mașinile lui Toretto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h1>Mașinile lui Dominic Toretto</h1>
+    <p>"Cel mai important lucru din viață va fi mereu oamenii din jurul tău. Familia."</p>
+</header>
+
+<main>
+    <section class="cars">
+        <h2>Garajul Familiei</h2>
+        <div class="car-list">
+            {% for car in cars %}
+            <div class="car-card">
+                <img src="{{ car.image }}" alt="{{ car.name }}">
+                <h3>{{ car.name }}</h3>
+                <p><strong>Motor:</strong> {{ car.engine }}</p>
+                <p><strong>Putere:</strong> {{ car.horsepower }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Fast & Furious Fan Page © 2025</p>
+</footer>
+</body>
+</html>
